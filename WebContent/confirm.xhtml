@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html">
+ <!--taglari kullanabilmek icin projemize bu namespace i ekliyorz. -->
+<h:head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <title>Welcome</title>
+</h:head>
+<h:body>
+
+<h:form>
+Ad:<h:outputText value="#{userBean.ad}" /><br/>
+Soyad:<h:outputText value="#{userBean.soyad}" /><br/>
+Cinsiyet:<h:outputText value="#{userBean.cinsiyet}" /><br/>
+Email:<h:outputText value="#{userBean.email}" /><br/>
+Doğum Tarihi:<h:outputText value="#{userBean.dogumTarihi}" /><br/>
+Seviyesi:<h:outputText value="#{userBean.serviceLevel}" /><br/>
+
+<h:commandButton value="Değiştir" action="register"  />
+<h:commandButton value="Onay" action="#{userBean.addConfirmedUser}"  />
+
+</h:form>
+</h:body>
+
+</html>

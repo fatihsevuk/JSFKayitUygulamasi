@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core"
+ >
+ <!--taglari kullanabilmek icin projemize bu namespace i ekliyorz. -->
+<h:head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Basit bir jsf kayıt uygulaması</title>
+</h:head>
+
+<h:body>
+
+<h:form>
+<h2>JSF kayıt uygulaması</h2>
+<h4>kayıt formu</h4>
+<table>
+
+<tr>
+<td>Ad:</td>
+<td>
+<h:inputText label="Ad:" id="ad" value="#{userBean.ad}" required="true" />
+<h:message for="ad"/>
+</td>
+
+
+
+
+</tr>
+<tr>
+<td>Soyad:</td>
+<td>
+<h:inputText label="Soyad" id="soyad" value="#{userBean.soyad}" required="true" />
+<h:message for="soyad"></h:message>
+
+</td>
+</tr>
+
+<tr>
+<td>Cinsiyet:</td>
+<td>
+<h:selectOneRadio label="cinsiyet" id="cinsiyet" value="#{userBean.cinsiyet}" required="true">
+
+<f:selectItem itemLabel="Erkek" itemValue="male"/>
+<f:selectItem itemLabel="Kadın" itemValue="female"/>
+</h:selectOneRadio>
+
+<h:message for="cinsiyet"></h:message>
+</td>
+</tr>
+
+<tr>
+<td>Doğum Tarihi:</td>
+<td>
+<h:inputText label="DogumTarihi" id="dogumTarihi" value="#{userBean.dogumTarihi}" required="true" >
+
+<f:convertDateTime pattern="DD-mm-yy"/>
+</h:inputText>(dd-mm-yy)
+<h:message for="dogumTarihi"></h:message>
+
+</td>
+</tr>
+
+
+<tr>
+<td>Email:</td>
+<td>
+<h:inputText label="EmailAdres" id="email" value="#{userBean.email}" required="true" validator="#{userBean.validateEmail}"/>
+<h:message for="email"></h:message>
+</td>
+</tr>
+
+<tr>
+<td>Service LEvel:</td>
+<td>
+<h:selectOneMenu label="ServiceLevel" value="#{userBean.serviceLevel}" >
+
+<f:selectItem itemLabel="Medium" itemValue="medium"/>
+<f:selectItem itemLabel="Basic" itemValue="basic"/>
+<f:selectItem itemLabel="Premium" itemValue="premium"/>
+
+
+
+
+</h:selectOneMenu>
+</td>
+</tr>
+
+
+
+
+</table>
+
+
+<p> <h:commandButton value="Kayıt" action="confirm"/></p>
+
+</h:form>
+</h:body>
+</html>
